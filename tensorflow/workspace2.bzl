@@ -131,11 +131,19 @@ def _tf_repositories():
     # and update the sha256 with the result.
 
     # LINT.IfChange
+#     tf_http_archive(
+#         name = "XNNPACK",
+#         sha256 = "7a16ab0d767d9f8819973dbea1dc45e4e08236f89ab702d96f389fdc78c5855c",
+#         strip_prefix = "XNNPACK-e8f74a9763aa36559980a0c2f37f587794995622",
+#         urls = tf_mirror_urls("https://github.com/google/XNNPACK/archive/e8f74a9763aa36559980a0c2f37f587794995622.zip"),
+#     )
     tf_http_archive(
         name = "XNNPACK",
-        sha256 = "7a16ab0d767d9f8819973dbea1dc45e4e08236f89ab702d96f389fdc78c5855c",
-        strip_prefix = "XNNPACK-e8f74a9763aa36559980a0c2f37f587794995622",
-        urls = tf_mirror_urls("https://github.com/google/XNNPACK/archive/e8f74a9763aa36559980a0c2f37f587794995622.zip"),
+        sha256 = "ca3a5316b8161214f8f22a578fb638f1fccd0585eee40301363ffd026310379a",
+        strip_prefix = "XNNPACK-a50369c0fdd15f0f35b1a91c964644327a88d480",
+        urls = ["https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/XNNPACK/archive/a50369c0fdd15f0f35b1a91c964644327a88d480.zip",
+                "http://127.0.0.1:8080/tensorflow/XNNPACK-a50369c0fdd15f0f35b1a91c964644327a88d480.zip"
+        ],
     )
     # LINT.ThenChange(//tensorflow/lite/tools/cmake/modules/xnnpack.cmake)
 
@@ -880,12 +888,20 @@ def _tf_repositories():
     # Dependencies required by grpc
     #   - pin rules_go to a newer version so it's compatible with Bazel 6.0
     #   - patch upb so that it's compatible with Bazel 6.0, the latest version of upb doesn't work with the old grpc version.
+#     tf_http_archive(
+#         name = "io_bazel_rules_go",
+#         sha256 = "16e9fca53ed6bd4ff4ad76facc9b7b651a89db1689a2877d6fd7b82aa824e366",
+#         urls = tf_mirror_urls("https://github.com/bazelbuild/rules_go/releases/download/v0.34.0/rules_go-v0.34.0.zip"),
+#     )
+
     tf_http_archive(
         name = "io_bazel_rules_go",
-        sha256 = "16e9fca53ed6bd4ff4ad76facc9b7b651a89db1689a2877d6fd7b82aa824e366",
-        urls = tf_mirror_urls("https://github.com/bazelbuild/rules_go/releases/download/v0.34.0/rules_go-v0.34.0.zip"),
+        sha256 = "80cbfe287bacbe6cec97f0446a413fee7c21dafda3981b9de71a35eebbc89e1f",
+        #urls = tf_mirror_urls("https://github.com/bazelbuild/rules_go/releases/download/v0.34.0/rules_go-v0.34.0.zip"),
+        urls = ["http://127.0.0.1:8080/tensorflow/rules_go-v0.34.0.zip"
+        ],
     )
-
+    
     tf_http_archive(
         name = "upb",
         sha256 = "61d0417abd60e65ed589c9deee7c124fe76a4106831f6ad39464e1525cef1454",
