@@ -141,8 +141,7 @@ def _tf_repositories():
         name = "XNNPACK",
         sha256 = "ca3a5316b8161214f8f22a578fb638f1fccd0585eee40301363ffd026310379a",
         strip_prefix = "XNNPACK-a50369c0fdd15f0f35b1a91c964644327a88d480",
-        urls = ["https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/XNNPACK/archive/a50369c0fdd15f0f35b1a91c964644327a88d480.zip",
-                "http://127.0.0.1:8080/tensorflow/XNNPACK-a50369c0fdd15f0f35b1a91c964644327a88d480.zip"
+        urls = ["http://127.0.0.1:8080/tensorflow/XNNPACK-a50369c0fdd15f0f35b1a91c964644327a88d480.zip",
         ],
     )
     # LINT.ThenChange(//tensorflow/lite/tools/cmake/modules/xnnpack.cmake)
@@ -512,7 +511,7 @@ def _tf_repositories():
     # WARNING: make sure ncteisen@ and vpai@ are cc-ed on any CL to change the below rule
     tf_http_archive(
         name = "com_github_grpc_grpc",
-        sha256 = "b956598d8cbe168b5ee717b5dafa56563eb5201a947856a6688bbeac9cac4e1f",
+        sha256 = "892423649d2d0d49824f82632f2e670b92ee52e57040c86536f903cf6786a492",
         strip_prefix = "grpc-b54a5b338637f92bfcf4b0bc05e0f57a5fd8fadd",
         system_build_file = "//third_party/systemlibs:grpc.BUILD",
         patch_file = [
@@ -528,7 +527,7 @@ def _tf_repositories():
             "//third_party/systemlibs:grpc.bazel.generate_cc.bzl": "bazel/generate_cc.bzl",
             "//third_party/systemlibs:grpc.bazel.protobuf.bzl": "bazel/protobuf.bzl",
         },
-        urls = tf_mirror_urls("https://github.com/grpc/grpc/archive/b54a5b338637f92bfcf4b0bc05e0f57a5fd8fadd.tar.gz"),
+        urls = ["http://127.0.0.1:8080/tensorflow/grpc-b54a5b338637f92bfcf4b0bc05e0f57a5fd8fadd.tar.gz"],
     )
 
     tf_http_archive(
@@ -896,18 +895,25 @@ def _tf_repositories():
 
     tf_http_archive(
         name = "io_bazel_rules_go",
-        sha256 = "80cbfe287bacbe6cec97f0446a413fee7c21dafda3981b9de71a35eebbc89e1f",
-        #urls = tf_mirror_urls("https://github.com/bazelbuild/rules_go/releases/download/v0.34.0/rules_go-v0.34.0.zip"),
-        urls = ["http://127.0.0.1:8080/tensorflow/rules_go-v0.34.0.zip"
+        sha256 = "29f2aae88fb8526af5d2c9824d2d92b6a1dfaa9393bf7e2513e53d1f68e3d7f0",
+        urls = ["http://127.0.0.1:8080/tensorflow/rules_go-v0.34.0.zip",
         ],
     )
     
+    # tf_http_archive(
+    #     name = "upb",
+    #     sha256 = "61d0417abd60e65ed589c9deee7c124fe76a4106831f6ad39464e1525cef1454",
+    #     strip_prefix = "upb-9effcbcb27f0a665f9f345030188c0b291e32482",
+    #     patch_file = ["//third_party/grpc:upb_platform_fix.patch"],
+    #     urls = tf_mirror_urls("https://github.com/protocolbuffers/upb/archive/9effcbcb27f0a665f9f345030188c0b291e32482.tar.gz"),
+    # )
+
     tf_http_archive(
         name = "upb",
         sha256 = "61d0417abd60e65ed589c9deee7c124fe76a4106831f6ad39464e1525cef1454",
         strip_prefix = "upb-9effcbcb27f0a665f9f345030188c0b291e32482",
         patch_file = ["//third_party/grpc:upb_platform_fix.patch"],
-        urls = tf_mirror_urls("https://github.com/protocolbuffers/upb/archive/9effcbcb27f0a665f9f345030188c0b291e32482.tar.gz"),
+        urls = ["http://127.0.0.1:8080/tensorflow/upb-9effcbcb27f0a665f9f345030188c0b291e32482.tar.gz"],
     )
 
     tf_http_archive(

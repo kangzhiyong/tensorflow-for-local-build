@@ -38,11 +38,17 @@ def workspace():
 
     # Maven dependencies.
     RULES_JVM_EXTERNAL_TAG = "3.2"
+    # http_archive(
+    #     name = "rules_jvm_external",
+    #     strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    #     sha256 = "82262ff4223c5fda6fb7ff8bd63db8131b51b413d26eb49e3131037e79e324af",
+    #     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+    # )
     http_archive(
         name = "rules_jvm_external",
         strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
         sha256 = "82262ff4223c5fda6fb7ff8bd63db8131b51b413d26eb49e3131037e79e324af",
-        url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+        url = "http://127.0.0.1:8080/tensorflow/%s.zip" % RULES_JVM_EXTERNAL_TAG,
     )
 
     # Load the raw llvm-project.  llvm does not have build rules set up by default,
