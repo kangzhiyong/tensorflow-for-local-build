@@ -253,6 +253,7 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 &#x9;1、tensorflow, 版本不对，目前编译打包成功的时v2.11.0版本
 
 &#x9;2、python版本不对，必须用编译打包时使用的python pip安装
+
 &#x9;3、在虚环境安装中安装会报这个错误，退出虚环境在base中安装
 
 ### 5、dlopen(/Users/davidlaxer/tensorflow-metal/lib/python3.8/site-packages/tensorflow-plugins/libmetal\_plugin.dylib, 6): Symbol not found:
